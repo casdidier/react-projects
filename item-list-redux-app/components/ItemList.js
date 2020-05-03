@@ -1,4 +1,7 @@
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
+
+
+
 class ItemList extends Component {
     constructor() {
         super();
@@ -45,5 +48,14 @@ class ItemList extends Component {
             </ul>
         );
     }
+
+    ItemList.propTypes = {
+        fetchData : PropTypes.func.isRequired,
+        items     : PropTypes.array.isRequired,
+        hasErrored: PropTypes.bool.isRequired,
+        isLoading : PropTypes.bool.isRequired
+    };
+
+
 }
 export default ItemList;
