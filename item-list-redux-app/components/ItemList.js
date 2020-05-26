@@ -28,17 +28,17 @@ class ItemList extends Component {
 }
 
 ItemList.propTypes = {
-    fetchData : PropTypes.func.isRequired,
-    items     : PropTypes.array.isRequired,
+    fetchData: PropTypes.func.isRequired,
+    items: PropTypes.array.isRequired,
     hasErrored: PropTypes.bool.isRequired,
-    isLoading : PropTypes.bool.isRequired
+    isLoading: PropTypes.bool.isRequired
 };
 
 const mapStateToProps = (state) => {
     return {
-        items     : state.items,
+        items: state.items,
         hasErrored: state.itemsHasErrored,
-        isLoading : state.itemsIsLoading
+        isLoading: state.itemsIsLoading
     };
 };
 
