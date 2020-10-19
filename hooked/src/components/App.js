@@ -21,19 +21,6 @@ const App = () => {
     });
   }, []);
 
-  // useEffect(() => {
-    
-  //       fetch(MOVIE_API_URL)
-  //           .then(response => response.json())
-  //           .then(jsonResponse => {
-        
-  //           dispatch({
-  //               type: "SEARCH_MOVIES_SUCCESS",
-  //               payload: jsonResponse.Search
-  //       	});
-  //     	});
-  // 	}, []);
-
   // you can add this to the onClick listener of the Header component
   const refreshPage = () => {
     window.location.reload();
