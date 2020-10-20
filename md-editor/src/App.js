@@ -6,10 +6,14 @@ export default function App() {
 
   const [editorText, setEditorText] = useState('## Suppp');
 
+  const update = (event) => setEditorText(event.target.value);
+
   return (
     <>
       <div className="app">
-        <div className="editor">{editorText}</div>
+        <div className="textarea">
+          <input onChange={update} type="text" value={editorText} />
+        </div>
         <ReactMarkdown className="preview">{editorText}</ReactMarkdown>
       </div>
     </>
