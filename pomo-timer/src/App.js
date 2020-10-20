@@ -3,12 +3,12 @@ import "./styles.css";
 
 export default function App() {
 
-  const [time, setTime] = useState(2000);
+  const [time, setTime] = useState(25 * 60);
   const [title, setTitle] = useState('Start one round');
   const intervalRef = useRef(null);
 
 
-  const timer = () => setTime(time : time += 1)
+  const timer = () => setTime(time => time += 1)
 
   function runTimer() {
     intervalRef.current = setInterval(() => {
@@ -24,14 +24,21 @@ export default function App() {
   const resetTimer = () => {
     clearInterval(intervalRef.current);
     intervalRef.current = null;
-    setTime(0);
+    setTime(25 * 60);
   }
+
+  function padTime(time) {
+    return time.toString().padStart(2, "0");
+  }
+
+  const minutes = padTime(Math.floor(time / 60));
+  const seconds = padTime(time - minutes * 60);
 
   return (
     <>
       <div className="app">
         <h2>{title}</h2>
-        <div className="timer">{time}</div>
+        <div className="timer">{`${minutes}:${seconds}`}</div>
         <div className="buttons">
           <div className="button" onClick={runTimer}>Start</div>
           <div className="button" onClick={resetTimer}>Reset</div>
