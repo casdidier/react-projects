@@ -58,7 +58,6 @@ export default function App() {
 
   return (
     <>
-      <Banner />
       <div className="app">
         {/* information goes here */}
         <div className="info">
