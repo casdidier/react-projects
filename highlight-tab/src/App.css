@@ -58,7 +58,7 @@ body {
   background: #5131a9;
   color: #eee;
 }
-
+/*
 .address-bar {
   background: #5533b3;
   padding: 8px;
@@ -73,7 +73,7 @@ body {
   width: 100%;
   padding: 8px 20px;
   font-size: 18px;
-}
+} */
 
 .viewport {
   display: flex;
