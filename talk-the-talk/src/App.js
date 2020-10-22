@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useCallback } from "react";
-
+import { useStopwatch } from "react-timer-hook";
+import { useSpeechSynthesis } from "react-speech-kit";
 import "./App.css";
 
 export default function App() {
@@ -8,9 +9,19 @@ export default function App() {
     { time: 5, text: "hello" },
     { time: 8, text: "whats up" }
   ]);
+  const { seconds, isRunning, start, reset } = useStopwatch();
+  const { speak, speaking, supported } = useSpeechSynthesis();
 
+  const doReset = useCallback(() => reset(), []);
+  const doSpeak = useCallback((...p) => speak(...p), []);
 
+  useEffect(() => {
+    const foundTimer = timers.find(t => t.time === seconds);
+    if (foundTimer) doSpeak({ text: foundTimer.text });
 
+    // check to see if seconds is greater than the last timers time
+    if (seconds > timers[timers.length - 1].time) doReset();
+  }, [seconds, timers, doSpeak, doReset]);
 
   function updateTimers(index, time, text) {
     const newTimers = [...timers];
@@ -25,7 +36,9 @@ export default function App() {
     setTimers(newTimers);
   }
 
-
+  if (!supported) {
+    return <div>Your browser is not supported. Sorry.</div>;
+  }
 
   return (
     <>
