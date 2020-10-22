@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@600&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap");
 
 * {
   box-sizing: border-box;
@@ -6,103 +6,107 @@
 
 body {
   margin: 0;
-  padding: 0;
-  font-family: 'Comfortaa', Arial, Helvetica, sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 18px;
+  padding: 30px;
+  background: #1f1f1f;
+  color: #777;
 }
 
 .app {
-  text-align: center;
+  padding: 30px;
+  margin: 0 auto;
   min-height: 100vh;
-  background: #dcdcdc;
-  padding: 100px 50px;
+  display: flex;
+  flex-direction: column;
 }
 
-.error {
-  display: inline-block;
-  text-align: center;
-  margin: 30px;
-  background: rgb(221, 85, 70);
-  color: rgb(247, 232, 230);
-  padding: 20px 30px;
-  border-radius: 5px;
-  text-decoration: none;
-  transition: 0.3s ease all;
+@media (min-width: 1280px) {
+  .app {
+    max-width: 50%;
+  }
 }
 
-.error:hover {
-  background: rgb(235, 95, 79);
-  box-shadow: 3px 3px 0 rgb(141, 38, 26);
-}
-
-h1 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Luckiest Guy";
+  color: #fbca17;
+  font-size: 60px;
   margin-top: 0;
-  margin-bottom: 20px;
-  color: #bbb;
+  line-height: 1;
+  margin-bottom: 10px;
+  letter-spacing: 3px;
 }
 
-form {
+.timers {
   margin-bottom: 50px;
 }
 
-input[type='text'] {
-  min-width: 400px;
-  border-radius: 50px;
-  padding: 15px 20px;
-  border: 1px solid #fff;
-  outline: none;
-  margin-right: 12px;
-  font-size: 18px;
-  transition: 0.3s ease border-color;
+.timer {
+  display: flex;
 }
 
-input[type='text']:active,
-input[type='text']:focus {
-  border-color: #999;
+input {
+  background: #444;
+  color: #eee;
+  border: none;
+  padding: 15px;
+  font-size: 21px;
+  margin-right: 4px;
+  margin-bottom: 4px;
+  border-radius: 5px;
+}
+
+input[type="number"] {
+  width: 100px;
+  flex-shrink: 1;
+}
+
+input[type="text"] {
+  flex-grow: 1;
 }
 
 button {
-  padding: 15px 20px;
-  border-radius: 50px;
+  border-radius: 5px;
   border: none;
-  background: #222;
-  color: #bbb;
-  font-size: 18px;
+  outline: none;
+  margin-right: 8px;
   cursor: pointer;
-  transition: 0.3s ease all;
 }
 
-button:hover {
-  background: #111;
-  color: #eee;
+.add-button {
+  background: #555;
+  color: #999;
+  margin-top: 10px;
+  font-size: 14px;
+  padding: 10px 20px;
 }
 
-.image-grid {
-  display: grid;
-  grid-gap: 15px;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  grid-auto-rows: minmax(50px, 200px);
-}
-
-.image {
-  background: #fff;
-  padding: 3px;
-  border-radius: 3px;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
-    0 2px 4px -1px rgba(0, 0, 0, 0.06);
-  transition: 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55) transform;
-}
-
-.image:hover {
-  transform: translateY(-2px);
-}
-
-.image img {
+.buttons {
   display: flex;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+  align-items: center;
 }
 
-.image:nth-child(3n) {
-  grid-column-end: span 2;
+.buttons button {
+  font-size: 21px;
+  padding: 25px 45px;
+}
+
+.start-button {
+  background: #2f855a;
+  color: #aedac4;
+}
+
+.stop-button {
+  background: #c53030;
+  color: #f0c0c0;
+}
+
+.buttons p {
+  font-size: 16px;
+  color: #555;
 }
