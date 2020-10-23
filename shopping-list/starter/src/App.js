@@ -12,6 +12,7 @@ const App = () => {
 	]);
 
 	const [inputValue, setInputValue] = useState("");
+	const [totalItemCount, setTotalItemCount] = useState(6);
 
 	const handleAddButtonClick = () => {
 		const newItems = [...items, { itemName: inputValue, quantity: 1, isSelected: false }];
@@ -23,6 +24,7 @@ const App = () => {
 		newItems[index].quantity -= 1;
 
 		setItems(newItems);
+		calculateTotal();
 	}
 
 	const incrementQuantity = (index) => {
@@ -30,6 +32,7 @@ const App = () => {
 		newItems[index].quantity += 1;
 
 		setItems(newItems);
+		calculateTotal();
 	}
 
 	const handleComplete = (index) => {
@@ -38,6 +41,15 @@ const App = () => {
 		newItems[index].isSelected = !newItems[index].isSelected;
 
 		setItems(newItems);
+	}
+
+	const calculateTotal = () => {
+		const totalItemCount = items.reduce((total, item) => {
+			return total += item.quantity;
+		}, 0)
+
+		setTotalItemCount(totalItemCount);
+
 	}
 
 	return (
@@ -79,7 +91,7 @@ const App = () => {
 						</div>
 					})}
 				</div>
-				<div className='total'>Total: 6</div>
+				<div className='total'>Total: {totalItemCount}</div>
 			</div>
 		</div>
 	);
