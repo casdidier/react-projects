@@ -32,6 +32,14 @@ const App = () => {
 		setItems(newItems);
 	}
 
+	const handleComplete = (index) => {
+		const newItems = [...items];
+
+		newItems[index].isSelected = !newItems[index].isSelected;
+
+		setItems(newItems);
+	}
+
 	return (
 		<div className='app-background'>
 			<div className='main-container'>
@@ -49,12 +57,12 @@ const App = () => {
 								{/* HINT: replace false with a boolean indicating the item has been completed or not */}
 								{item.isSelected ? (
 									<>
-										<FontAwesomeIcon icon={faCheckCircle} />
+										<FontAwesomeIcon icon={faCheckCircle} onClick={() => handleComplete(index)} />
 										<span className='completed'>{item.itemName}</span>
 									</>
 								) : (
 										<>
-											<FontAwesomeIcon icon={faCircle} />
+											<FontAwesomeIcon icon={faCircle} onClick={() => handleComplete(index)} />
 											<span>{item.itemName}</span>
 										</>
 									)}
