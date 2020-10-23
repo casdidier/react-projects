@@ -18,6 +18,20 @@ const App = () => {
 		setItems(newItems);
 	}
 
+	const decrementQuantity = (index) => {
+		const newItems = [...items];
+		newItems[index].quantity -= 1;
+
+		setItems(newItems);
+	}
+
+	const incrementQuantity = (index) => {
+		const newItems = [...items];
+		newItems[index].quantity += 1;
+
+		setItems(newItems);
+	}
+
 	return (
 		<div className='app-background'>
 			<div className='main-container'>
@@ -46,11 +60,11 @@ const App = () => {
 									)}
 							</div>
 							<div className='quantity'>
-								<button>
+								<button onClick={() => decrementQuantity(index)}>
 									<FontAwesomeIcon icon={faChevronLeft} />
 								</button>
 								<span>{item.quantity}</span>
-								<button>
+								<button onClick={() => incrementQuantity(index)}>
 									<FontAwesomeIcon icon={faChevronRight} />
 								</button>
 							</div>
