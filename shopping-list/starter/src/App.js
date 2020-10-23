@@ -21,7 +21,12 @@ const App = () => {
 
 	const decrementQuantity = (index) => {
 		const newItems = [...items];
-		newItems[index].quantity -= 1;
+
+		if (newItems[index].quantity === 1) {
+			newItems[index].quantity = 1
+		} else {
+			newItems[index].quantity -= 1;
+		}
 
 		setItems(newItems);
 		calculateTotal();
