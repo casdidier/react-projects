@@ -2,6 +2,7 @@ import React from 'react';
 import { useForm } from 'react-hook-form';
 import { useHistory } from 'react-router-dom';
 import { useSignupForm } from './SignupFormContext';
+import Animator from './Animator';
 
 export default function ProfileForm() {
   const { register, handleSubmit, errors } = useForm();
@@ -14,7 +15,7 @@ export default function ProfileForm() {
   }
 
   return (
-    <>
+    <Animator>
       <form onSubmit={handleSubmit(onSubmit)} noValidate>
         <h2>Tell us about yourself</h2>
 
@@ -41,6 +42,6 @@ export default function ProfileForm() {
 
         <input type="submit" value="Next" />
       </form>
-    </>
+    </Animator>
   );
 }
