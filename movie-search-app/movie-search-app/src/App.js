@@ -1,6 +1,6 @@
 /* eslint-disable react/no-array-index-key */
 /* eslint-disable no-nested-ternary */
-import React, { useState, useEffect, useReducer } from 'react';
+import React, { useEffect, useReducer } from 'react';
 import './App.css';
 import Header from './components/Header';
 import Movie from './components/Movie';
@@ -81,12 +81,12 @@ const App = () => {
       <Search search={search} />
       <p className="App-intro">Sharing a few of our favourite movies</p>
       <div className="movies">
-        {loading && !errorMessage ? (
+        {state.loading && !state.errorMessage ? (
           <span>loading...</span>
-        ) : errorMessage ? (
-          <div className="errorMessage">{errorMessage}</div>
+        ) : state.errorMessage ? (
+          <div className="errorMessage">{state.errorMessage}</div>
         ) : (
-          movies.map((movie, index) => (
+          state.movies.map((movie, index) => (
             <Movie key={`${index}-${movie.Title}`} movie={movie} />
           ))
         )}
