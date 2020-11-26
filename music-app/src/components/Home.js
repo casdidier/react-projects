@@ -29,6 +29,7 @@ const reducer = (state, action) => {
         ...state,
         hasError: true,
         isFetching: false,
+        errorMessage: action.payload,
       };
     default:
       return state;
@@ -54,16 +55,15 @@ export const Home = () => {
         throw res;
       })
       .then((resJson) => {
-        console.log(resJson);
         dispatch({
           type: 'FETCH_SONGS_SUCCESS',
           payload: resJson,
         });
       })
       .catch((error) => {
-        console.log(error);
         dispatch({
           type: 'FETCH_SONGS_FAILURE',
+          payload: error,
         });
       });
   }, [authState.token]);
