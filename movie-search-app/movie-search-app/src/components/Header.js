@@ -1,10 +1,11 @@
 import React from 'react';
 
-const Header = (props) => {
+// eslint-disable-next-line react/prop-types
+const Header = ({ text }) => {
   return (
     <div>
       <header className="App-header">
-        <h2>{props.text}</h2>
+        <h2>{text}</h2>
       </header>
     </div>
   );
