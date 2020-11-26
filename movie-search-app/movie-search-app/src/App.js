@@ -75,18 +75,20 @@ const App = () => {
       });
   };
 
+  const { movies, errorMessage, loading } = state;
+
   return (
     <div className="App">
       <Header text="HOOKED" />
       <Search search={search} />
       <p className="App-intro">Sharing a few of our favourite movies</p>
       <div className="movies">
-        {state.loading && !state.errorMessage ? (
+        {loading && !errorMessage ? (
           <span>loading...</span>
         ) : state.errorMessage ? (
-          <div className="errorMessage">{state.errorMessage}</div>
+          <div className="errorMessage">{errorMessage}</div>
         ) : (
-          state.movies.map((movie, index) => (
+          movies.map((movie, index) => (
             <Movie key={`${index}-${movie.Title}`} movie={movie} />
           ))
         )}
