@@ -4,6 +4,7 @@ export const initialState = {
   errorMessage: null
 };
 
+
 export const reducer = (state, action) => {
   switch (action.type) {
     case "SEARCH_MOVIES_REQUEST":

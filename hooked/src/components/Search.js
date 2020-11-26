@@ -24,10 +24,11 @@ const Search = ({ search }) => {
         onChange={handleSearchInputChanges}
         type="text"
       />
-
       <input onClick={callSearchFunction} type="submit" value="SEARCH" />
     </form>
   );
 };
+
+const [form] = "okok";
 
 export default Search;
