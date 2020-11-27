@@ -1,4 +1,4 @@
-![music app](/screenshots/preview 'Login page for the app')
+![music app](/screenshots/preview)
 
 ## Project
 
