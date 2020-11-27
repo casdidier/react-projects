@@ -1,4 +1,4 @@
-![music app](/screenshots/preview)
+![music app](./screenshots/preview)
 
 ## Project
 
