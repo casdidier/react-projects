@@ -94,7 +94,7 @@ export const Login = () => {
 
             <button disabled={data.isSubmitting}>
               {data.isSubmitting ? (
-                <img className="spinner" alt="loading icon" />
+                <img className="spinner" src="../logo.svg" alt="loading icon" />
               ) : (
                 'Login'
               )}
