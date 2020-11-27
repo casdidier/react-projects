@@ -1,4 +1,4 @@
-
+![App](/screenshots/preview.png?raw=true "Login page for the app")
 
 ## Project
 
