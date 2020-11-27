@@ -1,5 +1,8 @@
+/* eslint-disable import/no-named-as-default */
+/* eslint-disable import/no-cycle */
 import React from 'react';
 import './App.css';
+
 import Login from './components/Login';
 import Home from './components/Home';
 import Header from './components/Header';
